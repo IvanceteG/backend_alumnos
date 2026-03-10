@@ -17,19 +17,19 @@ const alumnos = [
 
 const seed = async () => {
   await mongoose.connect(process.env.MONGODB_URI);
-  console.log('✅ Conectado a MongoDB Atlas');
+  console.log('Conectado a MongoDB Atlas');
 
   await Alumno.deleteMany({});
-  console.log('🗑️  Colección limpiada');
+  console.log('Colección limpiada');
 
   await Alumno.insertMany(alumnos);
-  console.log(`✅ ${alumnos.length} alumnos insertados`);
+  console.log(`${alumnos.length} alumnos insertados`);
 
   await mongoose.disconnect();
-  console.log('🔌 Desconectado');
+  console.log('Desconectado');
 };
 
 seed().catch((err) => {
-  console.error('❌ Error:', err.message);
+  console.error('Error:', err.message);
   process.exit(1);
 });
