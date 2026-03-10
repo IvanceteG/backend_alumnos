@@ -5,5 +5,5 @@ dotenv.config();
 
 export const connectDB = async () => {
   await mongoose.connect(process.env.MONGODB_URI);
-  console.log('✅ Conectado a MongoDB Atlas');
+  console.log('Conectado a la base de datos MongoDB Atlas');
 };
